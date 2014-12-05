@@ -28,4 +28,8 @@ public class LL<T> {
 	public LLNode getHead() {
 		return head;
 	}
+	
+	public void setHead(LLNode node) {
+		head = node;
+	}
 }
