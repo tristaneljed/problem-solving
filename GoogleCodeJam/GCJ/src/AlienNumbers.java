@@ -21,7 +21,7 @@ public class AlienNumbers {
 			System.out.println("Usage: java AlienNumbers <input-file> <output-file>");
 			System.exit(-1);
 		}
-		
+		long startTime = System.currentTimeMillis();
 		Scanner s = new Scanner(new File(args[0]));
 		PrintWriter outputFile = new PrintWriter(args[1], "UTF-8");
 		char [] alienNumber;
@@ -40,6 +40,8 @@ public class AlienNumbers {
 		
 		outputFile.close();
 		s.close();
+		long endTime = System.currentTimeMillis();
+		System.out.println("Program runtime = " + (endTime - startTime) + "ms");
 	}
 
 	private static String numberConversion(char[] alienNumber,
