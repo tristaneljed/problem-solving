@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Solution {
 
-	private static int a[] = new int[200];
-	private static int b[] = new int[200];
-	private static int missing[] = new int[200];
+	private static int a[] = new int[201];
+	private static int b[] = new int[201];
+	private static int missing[] = new int[201];
 	private static int n;
 	private static int m;
 	private static int factor;
@@ -25,7 +25,7 @@ public class Solution {
 			b[s.nextInt() - factor]++;
 		}
 		
-		for (int i=0; i<200; i++) {
+		for (int i=0; i<201; i++) {
 			missing[i] = b[i] - a[i];
 			if (missing[i] > 0) {
 				System.out.print( (i+factor) + " " );
