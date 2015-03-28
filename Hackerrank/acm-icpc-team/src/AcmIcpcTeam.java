@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution {
+public class AcmIcpcTeam {
 	private static int n,m;
 	
 	public static void main(String[] args) {

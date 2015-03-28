@@ -3,7 +3,7 @@ import java.util.Scanner;
 /*
  * https://www.hackerrank.com/challenges/the-grid-search
  */
-public class Solution {
+public class TheGridSearch {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);

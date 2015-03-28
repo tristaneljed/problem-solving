@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Solution {
+public class AngryChildren {
 	private static long[] candies;
 	private static int n,k;
 	

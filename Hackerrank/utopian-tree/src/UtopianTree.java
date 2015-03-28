@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution {
+public class UtopianTree {
 	private static long[] heightArray;
 
 	public static void main(String[] args) {

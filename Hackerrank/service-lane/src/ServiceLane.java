@@ -4,14 +4,14 @@ import java.util.Scanner;
  *  https://www.hackerrank.com/challenges/service-lane
  */
 
-public class Solution {
+public class ServiceLane {
 	
-	private static class ServiceLane {
+	private static class ServiceLaneInt {
 		short laneWidth1[];
 		short laneWidth2[];
 		short laneWidth3[];
 		
-		public ServiceLane(int size) {
+		public ServiceLaneInt(int size) {
 			laneWidth1 = new short[size];
 			laneWidth2 = new short[size];
 			laneWidth3 = new short[size];
@@ -50,7 +50,7 @@ public class Solution {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
-		ServiceLane obj = new ServiceLane(n+1);
+		ServiceLaneInt obj = new ServiceLaneInt(n+1);
 		int numOfTestCases = s.nextInt();
 		for (int i=0; i<n; i++) {
 			short temp = s.nextShort();

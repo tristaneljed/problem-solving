@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution {
+public class FindDigits {
 
 	static int findDigits(long number) {
 		int count = 0;
