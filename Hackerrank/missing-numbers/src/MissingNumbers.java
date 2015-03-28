@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Solution {
+public class MissingNumbers {
 
 	private static int a[] = new int[201];
 	private static int b[] = new int[201];

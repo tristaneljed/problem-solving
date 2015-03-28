@@ -4,7 +4,7 @@ import java.util.Scanner;
  * https://www.hackerrank.com/challenges/icecream-parlor
  */
 
-public class Solution {
+public class IcecreamParlor {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Solution {
+public class SherlockAndGcd {
 	private static final String yes = "YES";
 	private static final String no = "NO";
 

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Solution {
+public class CavityMap {
 
 	private static char cavityMap[][]; 
 	private static byte size;
