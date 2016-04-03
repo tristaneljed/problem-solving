@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 /*
@@ -26,11 +26,11 @@ public class XSorted {
 		try {
 			s = new Scanner(new File("test.txt"));
 			int x = s.nextInt();
-			int[] input = new int[x];
+			PriorityQueue<Integer> input = new PriorityQueue<Integer>();
 			
 			int i=0;
 			for (i=0; i<x && s.hasNext(); i++) {
-				input[i] = s.nextInt();
+				input.offer(s.nextInt());
 			}
 			
 			if (i<x) {
@@ -46,25 +46,18 @@ public class XSorted {
 			}
 			
 			while(s.hasNext()) {
-				heapify(input);
-				output.println(input[0]);
-				input[0] = s.nextInt();
+				output.println(input.remove());
+				input.offer(s.nextInt());
 			}
 			
-			Arrays.sort(input);
-			for (i=0; i<x; i++) {
-				output.println(input[i]);
+			while(!input.isEmpty()) {
+				output.println(input.remove());
 			}
 		
 			output.close();
 			s.close();
 		} catch (FileNotFoundException e) {
 			System.err.println(e.getMessage());
-		}
-	}
-
-	private static void heapify(int[] input) {
-		for(int i=0; i<input.length/2; i++) {
 		}
 	}
 }
