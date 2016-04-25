@@ -30,7 +30,6 @@ public class CountLuck {
 				forest[i] = rowData.toCharArray();
 				if (!foundHermione) {
 					int index = rowData.indexOf('M');
-					System.out.println("Index of M : " + index);
 					if (index != -1) {
 						startX = i;
 						startY = index;
@@ -39,7 +38,6 @@ public class CountLuck {
 				}
 				if (!foundExit) {
 					int index = rowData.indexOf('*');
-					System.out.println("Index of * : " + index);
 					if (index != -1) {
 						endX = i;
 						endY = index;
@@ -56,7 +54,6 @@ public class CountLuck {
 
 	private static String solve(int k) {
 		int wandWaves = roamForest(startX, startY);
-		System.out.println("Total wand waves : " + wandWaves);
 		if (wandWaves == k) {
 			return "Impressed";
 		} else {
@@ -65,12 +62,12 @@ public class CountLuck {
 	}
 
 	private static int roamForest(int x, int y) {
-		System.out.println("Trying to move at :" + x + ", " + y);
 		if ( !isMovableCoordinate(x, y)) {
 			return -1;
 		}
-		
+				
 		visited[x][y] = true;
+		boolean isWandNeeded = wandWaveNeeded(x, y);
 		
 		if (x == endX && y == endY) {
 			return 0;
@@ -83,7 +80,7 @@ public class CountLuck {
 		
 		int count = Math.max(Math.max(leftCount, rightCount), Math.max(upCount, downCount));
 		
-		if (wandWaveNeeded(x, y)) {
+		if (isWandNeeded) {
 			return count + 1;
 		} else {
 			return count;
@@ -92,7 +89,8 @@ public class CountLuck {
 	}
 	
 	private static boolean isMovableCoordinate(int x, int y) {
-		return (isValidCoordinate(x, y) && (forest[x][y] == '.' || forest[x][y] == '*') && !visited[x][y]);
+		return (isValidCoordinate(x, y) && (forest[x][y] == '.' || forest[x][y] == '*' 
+				|| forest[x][y] == 'M') && !visited[x][y]);
 	}
 	
 	private static boolean isValidCoordinate(int x, int y) {
@@ -102,25 +100,25 @@ public class CountLuck {
 	private static boolean wandWaveNeeded(int x, int y) {
 		int count = 0;
 		
-		System.out.println("Checking wand wave at : " + x + ", " + y);
+//		System.out.println("Checking wand wave at : " + x + ", " + y);
 		
 		/*if path on left*/
-		if (isValidCoordinate(x, y-1) && forest[x][y-1] == '.') {
+		if (isMovableCoordinate(x, y-1)) {
 			count++;
 		}
 		
 		/*if path on right*/
-		if (isValidCoordinate(x, y+1) && forest[x][y+1] == '.') {
+		if (isMovableCoordinate(x, y+1)) {
 			count++;
 		}
 		
 		/*if path on top*/
-		if (isValidCoordinate(x-1, y) && forest[x-1][y] == '.') {
+		if (isMovableCoordinate(x-1, y)) {
 			count++;
 		}
 		
 		/*if path below*/
-		if (isValidCoordinate(x-1, y) && forest[x-1][y] == '.') {
+		if (isMovableCoordinate(x+1, y)) {
 			count++;
 		}
 		
